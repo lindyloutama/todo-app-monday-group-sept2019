@@ -17,11 +17,11 @@ class App extends React.Component {
           <div className="col-12 col-lg-6">
             <ItemCount count={5} />
             <ul id="itemList">
-              <Item text="walk the cat" />
-              <Item text="buy oats" />
-              <Item text="learn React" />
-              <Item text="wash slippers" />
-              <Item text="de-flea the cat" completed={true} />
+              <Item text="walk the cat" completed={false} />
+              <Item text="buy oats" completed={true} />
+              <Item text="learn React" completed={true}/>
+              <Item text="wash slippers" completed={true}/>
+              <Item text="de-flea the cat" completed={false} />
             </ul>
           </div>
         </div>
