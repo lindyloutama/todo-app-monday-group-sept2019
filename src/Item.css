@@ -1,3 +1,11 @@
 .completedItem {
   text-decoration: line-through;
 }
+
+.greenCheck {
+  color: rgb(21, 224, 21)
+}
+
+.redBins {
+  color: red;
+}
