@@ -1,26 +1,33 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import AddItem from "./AddItem";
+import ItemCount from "./ItemCount";
+import Item from "./Item";
+import "./App.css";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  render() {
+    return (
+      <div className="container">
+        <h1 id="mainHeading">Todo List</h1>
+        <h3>Things I need to do very soon.</h3>
+        <div className="row">
+          <div className="col-12 col-lg-6">
+            <AddItem />
+          </div>
+          <div className="col-12 col-lg-6">
+            <ItemCount count={5} />
+            <ul id="itemList">
+              <Item text="walk the cat" />
+              <Item text="buy oats" />
+              <Item text="learn React" />
+              <Item text="wash slippers" />
+              <Item text="de-flea the cat" completed={true} />
+            </ul>
+          </div>
+        </div>
+      </div>
+    );
+  }
 }
 
 export default App;

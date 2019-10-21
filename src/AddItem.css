@@ -1,0 +1,9 @@
+#addButton {
+  background-color: lightcoral;
+  color: whitesmoke;
+  font-weight: 600;
+}
+
+#addItemInput {
+  font-size: 22px;
+}
