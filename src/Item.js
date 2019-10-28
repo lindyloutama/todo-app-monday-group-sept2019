@@ -2,24 +2,33 @@ import React from "react";
 import "./Item.css";
 
 class Item extends React.Component {
+
+  trashClicked = () => {
+    this.props.deleteTaskFunc(this.props.taskId);
+  };
+
   render() {
     return (
       <li className="list-group-item">
         <div className="row">
           <div className="col-8">
-            <span className={this.props.completed ? "completedItem" : ""}>
+            <span className={
+              this.props.completed ? "completedItem" : "mySpan"}
+              >
               {this.props.text}
             </span>
           </div>
           <div className="col-2">
             {/* <button className="btn btn-info">Delete</button> */}
-            <i class="far fa-trash-alt redBins"></i>
+            <i className="far fa-trash-alt redBins" onClick={this.trashClicked}></i>
           </div>
           <div className="col-2">
-            {/* {this.props.completed ? <button className="btn btn-light">uncheck</button> : <button className="btn btn-light">Done</button>} */}
-            {/* {this.props.completed === false && <button className="btn btn-light">Done</button>} */}
-            <i class="fas fa-check greenCheck"></i>
-            {/* {this.props.completed === true && <button className="btn btn-light">uncheck</button>} */}
+        
+           {this.props.completed ? ( 
+            <i className="fa fa-undo"></i>
+           ) : (
+            <i className="fas fa-check greenCheck"></i>
+           )}
           </div>
         </div>
       </li>
